@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> --}}
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-
+@php
+@endphp
 <body>
     <div class="container">
         <section class="signup-step-container">
@@ -22,28 +24,34 @@
                             <div class="wizard-inner">
                                 <div class="connecting-line"></div>
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active">
+                                    <li role="presentation" class="presentation active">
                                         <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab"
                                             aria-expanded="true"><span class="round-tab">1</span>
                                             {{-- <i>Step 1</i> --}}
                                         </a>
                                     </li>
-                                    <li role="presentation" class="disabled">
+                                    <li role="presentation" class="presentation disabled">
                                         <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab"
                                             aria-expanded="false"><span class="round-tab">2</span>
                                             {{-- <i>Step 2</i> --}}
                                         </a>
                                     </li>
-                                    <li role="presentation" class="disabled">
+                                    <li role="presentation" class="presentation disabled">
                                         <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab"><span
                                                 class="round-tab">3</span>
                                             {{-- <i>Step 3</i> --}}
                                         </a>
                                     </li>
+                                    <li role="presentation" class="presentation disabled">
+                                        <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab"><span
+                                                class="round-tab">4</span>
+                                            {{-- <i>Step 4</i> --}}
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
 
-                            <form role="form" action="/reservation" method="POST" class="login-box">
+                            <form id="reservation-form" action="" method="POST" class="login-box">
                                 @csrf
                                 <div class="tab-content" id="main_form">
                                     {{-- Step 1 --}}
@@ -52,6 +60,8 @@
                                     @include('steps.step2')
                                     {{-- Step 3 --}}
                                     @include('steps.step3')
+                                    {{-- Step 4 --}}
+                                    @include('steps.step4')
                                 </div>
 
                             </form>

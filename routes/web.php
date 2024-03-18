@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('reservation');
-});
-
-Route::post('/reservation', [ReservationController::class, 'submitReservation']);
+Route::get('/', [ReservationController::class, 'show']);
+Route::get('/restaurants', [ReservationController::class, 'filterRestaurantsByMeal']);
+Route::get('/dishes', [ReservationController::class, 'filterDishesByRes']);
+Route::get('/validate-step-3', [ReservationController::class, 'validateStep3']);
+Route::post('/', [ReservationController::class, 'submitReservation']);
+Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations');

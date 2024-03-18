@@ -13,6 +13,10 @@ i {
     margin-right: 10px;
 }
 
+p{
+    margin: 0;
+}
+
 /*------------------------*/
 input:focus,
 button:focus,
@@ -56,7 +60,6 @@ button:focus,
     position: relative;
     margin-bottom: 0;
     border-bottom-color: transparent;
-    justify-content: center;
 }
 
 .wizard>div.wizard-inner {
@@ -69,7 +72,7 @@ button:focus,
     height: 2px;
     background: #e0e0e0;
     position: absolute;
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -123,7 +126,7 @@ span.round-tab i {
 }
 
 .wizard .nav-tabs>li {
-    width: 30%;
+    width: 25%;
 }
 
 .wizard li:after {
@@ -366,11 +369,6 @@ input[type="checkbox"]:checked::before {
     border-color: #18ba60;
 }
 
-
-
-
-
-
 @media (max-width: 767px) {
     .sign-content h3 {
         font-size: 40px;
@@ -392,4 +390,76 @@ input[type="checkbox"]:checked::before {
     .signup-logo-header .header-flex {
         display: block;
     }
+}
+
+/* Custom step*/
+
+.section-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 55%;
+}
+
+.step-button {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Style step 3 */
+
+.group-input {
+    display: flex;
+    justify-content: center;
+}
+
+.w-row {
+    padding: 0 5px;
+}
+
+.btn-dynamic {
+    width: 55%;
+}
+
+.btn-add,
+.btn-dele {
+    width: 25px;
+    border-radius: 50%;
+    background-color: #616264;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.btn-add:hover {
+    background-color: #0db02b;
+}
+
+.btn-dele:hover {
+    background-color: red;
+}
+
+.step-detail {
+    width: 65%;
+    margin-bottom: 20px;
+}
+
+.presentation a{
+    pointer-events: none;
+}
+
+.show-error {
+    color: red;
+    font-size: 12px;
+}
+
+.dishes-review {
+    border: 1px solid #ccc;
+    text-transform: capitalize;
+    padding: 10px 5px;
 }
